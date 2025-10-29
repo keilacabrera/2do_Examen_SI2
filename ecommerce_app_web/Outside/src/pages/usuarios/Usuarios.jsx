@@ -31,22 +31,18 @@ const usuarios = [
 
 export default function Usuarios() {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 15 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
-      className="bg-white p-6 rounded-2xl shadow-md"
-    >
+
+    <div className="bg-white p-6 rounded-2xl shadow-md">
       {/* Encabezado */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between  mb-6">
         <h2 className="text-2xl font-semibold text-gray-800">Gestión de Usuarios</h2>
         <Link to="/usuarios/add">
-            <button         
+          <button
             className="mt-3 sm:mt-0 inline-flex items-center gap-2 bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-500 transition">
-          <LuPlus size={18} /> Agregar usuario
-        </button>
+            <LuPlus size={18} /> Agregar usuario
+          </button>
         </Link>
-        
+
       </div>
 
       {/* Tabla */}
@@ -64,21 +60,16 @@ export default function Usuarios() {
           </thead>
           <tbody>
             {usuarios.map((u) => (
-              <motion.tr
-                key={u.id}
-                whileHover={{ scale: 1.01 }}
-                className="border-b hover:bg-gray-50 transition"
-              >
+              <tr className="border-b hover:bg-gray-50 transition">
                 <td className="p-3 font-medium text-gray-800">{u.nombre}</td>
                 <td className="p-3 text-gray-700">{u.telefono}</td>
                 <td className="p-3 text-gray-700">{u.email}</td>
                 <td className="p-3">
                   <span
-                    className={`px-3 py-1 rounded-full text-sm font-medium ${
-                      u.estado
-                        ? "bg-green-100 text-green-700"
-                        : "bg-red-100 text-red-700"
-                    }`}
+                    className={`px-3 py-1 rounded-full text-sm font-medium ${u.estado
+                      ? "bg-green-100 text-green-700"
+                      : "bg-red-100 text-red-700"
+                      }`}
                   >
                     {u.estado ? "Activo" : "Inactivo"}
                   </span>
@@ -94,11 +85,15 @@ export default function Usuarios() {
                     </button>
                   </div>
                 </td>
-              </motion.tr>
+              </tr>
+
+
             ))}
           </tbody>
         </table>
       </div>
-    </motion.div>
+    </div>
+
+
   );
 }
