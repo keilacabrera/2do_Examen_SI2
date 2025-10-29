@@ -46,13 +46,9 @@ export default function AgregarUsuario() {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 15 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
-      className="bg-white p-6 rounded-2xl max-w-3xl mx-auto mt-4"
-    >
-      <h2 className="text-2xl font-semibold text-gray-800 mt-2 mb-6">
+    
+      <div className="bg-white p-6 rounded-2xl max-w-3xl mx-auto mt-4">
+        <h2 className="text-2xl font-semibold text-gray-800 mt-2 mb-6">
         Agregar nuevo usuario
       </h2>
 
@@ -165,6 +161,8 @@ export default function AgregarUsuario() {
           </button>
         </div>
       </form>
-    </motion.div>
+      </div>
+      
+    
   );
 }
