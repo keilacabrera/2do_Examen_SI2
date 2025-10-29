@@ -44,18 +44,21 @@ const VoiceSearch = ({ onSearch }) => {
           resetTranscript();
           SpeechRecognition.startListening({ language: "es-ES", continuous: false });
         }}
-        className={`px-4 py-2 rounded-lg font-medium text-white transition-colors duration-200 ${
-          listening ? "bg-green-600" : "bg-blue-600 hover:bg-blue-700"
+        className={`p-2 rounded-full text-white transition-colors duration-200 ${
+          listening ? "bg-red-600 hover:bg-red-500 " : "bg-teal-500 hover:bg-teal-400"
         }`}
       >
-        🎤 {listening ? "Escuchando..." : "Hablar"}
+        {listening ? <LuMicOff size={20} /> : <LuMic size={20} />}
       </button>
 
-      {transcript && (
+      <span>
+        {listening ? "Escuchando..." : "Hablar"}
+      </span>
+      {/* {transcript && (
         <span className="text-sm text-gray-500 italic truncate max-w-[200px]">
           {transcript}
         </span>
-      )}
+      )} */}
     </div>
   );
 };
