@@ -4,6 +4,7 @@ from .views import *
 
 router = DefaultRouter()
 router.register(r'categorias', CategoriaViewSet)
+router.register(r'productos', ProductViewSet)
 
 urlpatterns = [
     path('admin-login/', admin_login),
