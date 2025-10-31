@@ -1,6 +1,5 @@
 import { useState } from "react";
 import UserTable from "../../components/UserTable";
-import UserModal from "../../components/UserModal";
 import { NavLink, Link } from "react-router-dom";
 import { LuPlus} from "react-icons/lu";
 
@@ -46,14 +45,6 @@ export default function Usuarios() {
           onDelete={handleDelete}
         />
       </div>
-
-      {modalOpen && (
-        <UserModal
-          user={selectedUser}
-          onSave={handleSave}
-          onClose={() => setModalOpen(false)}
-        />
-      )}
     </div>
   );
 }
