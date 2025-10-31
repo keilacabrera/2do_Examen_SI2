@@ -16,6 +16,7 @@ import Checkout from './pages/ecommerce/Checkout';
 import ClienteProfile from './pages/ecommerce/ClienteProfile';
 import AdminLogin from './pages/admin/AdminLogin';
 import Login from './pages/admin/Login';
+import AddProductos from './pages/productos/AddProductos';
 // import './App.css'
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
                 <Route path="/usuarios" element={<Usuarios />} />
                 <Route path="/usuarios/add" element={<AgregarUsuario />} />
                 <Route path="/productos" element={<Productos />} />
+                <Route path="/productos/add" element={<AddProductos />} />
                 <Route path="/categoria" element={<Categoria />} />
                 <Route path="/estadistica" element={<Estadisticas />} />
               </Route>

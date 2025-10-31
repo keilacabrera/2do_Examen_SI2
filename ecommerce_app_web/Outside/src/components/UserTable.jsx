@@ -17,7 +17,7 @@ export default function UserTable({ users, onEdit, onDelete }) {
         </thead>
         <tbody>
           {users.map(user => (
-            <tr key={user.id} className="border-b border-gray-400 text-gray-700 hover:bg-gray-50">
+            <tr key={user.id} className="border-b border-gray-200 text-gray-700 hover:bg-blue-50">
               <td className="px-4 py-3">{user.name}</td>
               <td className="px-4 py-3">{user.phone}</td>
               <td className="px-4 py-3">{user.email}</td>
@@ -45,12 +45,13 @@ export default function UserTable({ users, onEdit, onDelete }) {
                 
               </td>
             </tr>
-          ))}
+          ))
+        }
         </tbody>
       </table>
 
       {users.length === 0 && (
-        <p className="text-center text-gray-500 py-6">No hay usuarios registrados.</p>
+        <p className="text-center text-gray-500 py-6 italic">No hay usuarios registrados.</p>
       )}
     </div>
   );

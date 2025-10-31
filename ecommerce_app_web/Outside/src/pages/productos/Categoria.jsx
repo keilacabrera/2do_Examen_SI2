@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
-import { LuPlus, LuSquarePen, LuTrash2, LuSave, LuX, LuSearch, LuChevronLeft, LuChevronRight } from "react-icons/lu";
+import { LuSquarePen, LuTrash2} from "react-icons/lu";
 import Pagination from "../../components/Pagination";
 import VoiceSearch from "../../components/VoiceSearch";
 import SearchBar from "../../components/SearchBar";
 import CategoriaModal from "../../components/CategoriaModal";
-import CategoriaHeader from "../../components/CategoriaHeader";
-import ConfirmDialog from "../../components/ConfirmDialog";
 import ConfirmDeleteModal from "../../components/ConfirmDeleteModal";
 
 export default function CategoriaTable() {
@@ -25,11 +23,10 @@ export default function CategoriaTable() {
 
 
 
-  
+
   const fetchCategorias = async (query = "") => {
     setLoading(true);
     try {
-      // console.log("Datos enviados:", formData);
       const res = await fetch(
         `${API_URL}?page=${page}&page_size=${pageSize}&search=${query}`
       );
@@ -43,7 +40,7 @@ export default function CategoriaTable() {
     }
   };
 
-    useEffect(() => {
+  useEffect(() => {
     fetchCategorias(search);
   }, [page, search]);
 
@@ -109,75 +106,78 @@ export default function CategoriaTable() {
 
   return (
     <div className="bg-white shadow-sm rounded-xl p-6">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-        <h2 className="text-2xl font-bold text-gray-800">Categorías</h2>
-        <div className="flex items-center gap-2">
-          <SearchBar search={search} setSearch={setSearch} setPage={setPage} />
-          <VoiceSearch onSearch={(text) => setSearch(text)} />
-            
-          
-        </div>
-        <button
+      <div className=" bg-white rounded-2xl shadow-lg p-6">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+          <h2 className="text-2xl font-bold text-gray-800">Categorías</h2>
+          <div className="flex items-center gap-2">
+            <SearchBar search={search} setSearch={setSearch} setPage={setPage} />
+            <VoiceSearch onSearch={(text) => setSearch(text)} />
+
+
+          </div>
+          <button
             onClick={() => handleOpenModal()}
-            className="bg-blue-600 text-white mr-6 px-4 py-2 rounded-lg hover:bg-blue-700"
+            className="bg-teal-600 text-white w-30 mr-6 px-4 py-2 rounded-lg hover:bg-teal-500 transition"
           >
             + Nueva
           </button>
-        
-      </div>
 
-      <div className="overflow-x-auto">
-        <table className="min-w-full rounded-lg  border-collapse">
-          <thead className="bg-gray-100 text-left text-gray-700">
-            <tr className="p-3  font-semibold ">
-              <th className="p-3  font-semibold">ID</th>
-              <th className="p-3   font-semibold">Nombre</th>
-              <th className="p-3  font-semibold ">Fecha Creación</th>
-              <th className="p-3  font-semibold ">Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            {loading ? (
-              <tr>
-                <td colSpan="4" className="text-center py-4 text-gray-500">
-                  Cargando...
-                </td>
+        </div>
+
+        <div className="overflow-x-auto">
+          <table className="min-w-full rounded-lg text-left border-collapse">
+            <thead className="bg-gray-100 text-gray-700 uppercase">
+              <tr className="">
+                <th className="px-4 py-3">ID</th>
+                <th className="px-4 py-3">Nombre</th>
+                <th className="px-4 py-3 ">Fecha Creación</th>
+                <th className="px-4 py-3 text-center">Acciones</th>
               </tr>
-            ) : categorias.length > 0 ? (
-              categorias.map((cat) => (
-                <tr key={cat.id} className="hover:bg-blue-50 transition-colors border-t border-gray-200 ">
-                  <td className="p-3 text-gray-700 ">{cat.id}</td>
-                  <td className="p-3 text-gray-700 ">{cat.category_name}</td>
-                  <td className="p-3 text-gray-700 ">{new Date(cat.created).toLocaleString()}</td>
-                  <td className="p-3   text-center">
-                    <div className="flex items-center justify-center gap-2">
-                      <button
-                      onClick={() => handleOpenModal(cat)}
-                      className="p-2 bg-yellow-100 text-yellow-600 rounded-md hover:bg-yellow-200"
-                    >
-                      <LuSquarePen size={16} />
-                    </button>
-                    <button
-                      onClick={() => handleOpenDeleteModal(cat)}
-                      className="p-2 bg-red-100 text-red-600 rounded-md hover:bg-red-200"
-                    >
-                      <LuTrash2 size={16} />
-                    </button>
-                    </div>
-                    
+            </thead>
+            <tbody>
+              {loading ? (
+                <tr>
+                  <td colSpan="4" className="text-center py-4 text-gray-500">
+                    Cargando...
                   </td>
                 </tr>
-              ))
-            ) : (
-              <tr>
-                <td colSpan="4" className="text-center py-4 text-gray-500 italic">
-                  No se encontraron categorías.
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
+              ) : categorias.length > 0 ? (
+                categorias.map((cat) => (
+                  <tr key={cat.id} className="hover:bg-blue-50 transition-colors border-b border-gray-200 ">
+                    <td className="p-3 text-gray-700 ">{cat.id}</td>
+                    <td className="p-3 text-gray-700 ">{cat.category_name}</td>
+                    <td className="p-3 text-gray-700 ">{new Date(cat.created).toLocaleString()}</td>
+                    <td className="p-3   text-center">
+                      <div className="flex items-center justify-center gap-2">
+                        <button
+                          onClick={() => handleOpenModal(cat)}
+                          className="p-2 bg-yellow-100 text-yellow-600 rounded-md hover:bg-yellow-200"
+                        >
+                          <LuSquarePen size={16} />
+                        </button>
+                        <button
+                          onClick={() => handleOpenDeleteModal(cat)}
+                          className="p-2 bg-red-100 text-red-600 rounded-md hover:bg-red-200"
+                        >
+                          <LuTrash2 size={16} />
+                        </button>
+                      </div>
+
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="4" className="text-center py-4 text-gray-500 italic">
+                    No se encontraron categorías.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
+
 
       <Pagination page={page} setPage={setPage} totalPages={totalPages} />
 

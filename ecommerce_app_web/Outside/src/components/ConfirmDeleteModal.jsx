@@ -1,18 +1,22 @@
+import { LuTrash2, LuSave, LuX, } from "react-icons/lu";
 export default function ConfirmDeleteModal({ isOpen, onClose, onConfirm, categoria }) {
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
       <div className="bg-white rounded-xl shadow-lg w-11/12 max-w-sm p-6">
-        <h2 className="text-lg font-semibold text-gray-700 mb-3">
-          Confirmar eliminación
+          <button className="flex ml-33 p-4 bg-red-100 rounded-full">
+            <LuTrash2 size={32} className="text-red-600" />
+          </button>
+        <h2 className="text-center text-xl font-semibold text-gray-900 mb-3">
+          ¿Está seguro?
         </h2>
-        <p className="text-gray-600 mb-5">
-          ¿Seguro que deseas eliminar la categoría{" "}
+        <p className="text-gray-600 text-center mb-5">
+          {/* ¿Seguro que deseas eliminar la categoría{" "}
           <span className="font-medium text-gray-800">
             {categoria?.nombre}
-          </span>
-          ? Esta acción no se puede deshacer.
+          </span> */}
+          ¿Desea eliminar la categoria {categoria?.category_name}?
         </p>
         <div className="flex justify-end gap-3">
           <button

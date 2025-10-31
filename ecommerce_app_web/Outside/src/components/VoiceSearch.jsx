@@ -45,7 +45,7 @@ const VoiceSearch = ({ onSearch }) => {
           SpeechRecognition.startListening({ language: "es-ES", continuous: false });
         }}
         className={`p-2 rounded-full text-white transition-colors duration-200 ${
-          listening ? "bg-red-600 hover:bg-red-500 " : "bg-teal-500 hover:bg-teal-400"
+          listening ? "bg-red-600 hover:bg-red-500 " : "bg-teal-600 hover:bg-teal-500"
         }`}
       >
         {listening ? <LuMicOff size={20} /> : <LuMic size={20} />}
