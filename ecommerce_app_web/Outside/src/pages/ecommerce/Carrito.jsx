@@ -32,7 +32,7 @@ const Cart = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
-      <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-2xl p-6">
+      <div className="max-w-5xl mx-auto mt-5 bg-white shadow-lg rounded-2xl p-6">
         <h1 className="text-2xl font-bold text-gray-800 mb-6">🛒 Carrito de Compras</h1>
 
         <div className="space-y-4">
