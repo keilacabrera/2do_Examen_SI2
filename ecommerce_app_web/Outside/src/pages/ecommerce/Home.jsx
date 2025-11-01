@@ -1,4 +1,5 @@
 import { LuShoppingCart, LuSearch, LuUser } from "react-icons/lu";
+import {Link} from 'react-router-dom'
 
 export default function HomeEcommerce() {
   const productos = [
@@ -25,11 +26,21 @@ export default function HomeEcommerce() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       {/* HERO */}
-      <header className="relative bg-slate-900 text-white py-20">
+      <header className="relative mt-8 bg-slate-900 text-white py-10">
+        <div className="ml-80 mx-80 mb-12 bg-white text-gray-600 rounded-lg">
+          <input
+            type="text"
+            // value={search}
+            // onChange={handleChange}
+            placeholder="Buscar ..."
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+          />
+        </div>
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center">
+
           <div className="md:w-1/2 space-y-4">
             <h1 className="text-4xl font-bold leading-tight">
-              ElectroSHOP, tienda online de electrodomésticos al mejor precio.
+              ElectroSTORE, tienda online de electrodomésticos al mejor precio.
             </h1>
             <p className="text-lg">
               Sembrando experiencias, formando clientes seguros.
@@ -81,10 +92,10 @@ export default function HomeEcommerce() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div>
             <h3 className="text-xl font-semibold text-teal-700 mb-2">
-              🌎 Eco Friendly
+              🌎 Respaldo y Garantía
             </h3>
             <p className="text-gray-600">
-              Productos 100% biodegradables y compostables.
+              Productos 100% garantizables.
             </p>
           </div>
           <div>
@@ -109,11 +120,11 @@ export default function HomeEcommerce() {
       {/* FOOTER */}
       <footer className="bg-slate-900 text-gray-300 py-8 mt-12">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between">
-          <p>© 2025 ElectroSHOP. Todos los derechos reservados.</p>
+          <p>© 2025 ElectroSTORE. Todos los derechos reservados.</p>
           <div className="flex gap-4 mt-3 md:mt-0">
-            <a href="#" className="hover:text-white">Inicio</a>
-            <a href="#" className="hover:text-white">Contacto</a>
-            <a href="#" className="hover:text-white">Políticas</a>
+            <Link to="/" className="hover:text-white">Inicio</Link>
+            <Link to="#" className="hover:text-white">Contacto</Link>
+            <Link to="#" className="hover:text-white">Políticas</Link>
           </div>
         </div>
       </footer>
