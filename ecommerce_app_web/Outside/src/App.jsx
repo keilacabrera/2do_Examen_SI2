@@ -32,6 +32,7 @@ function App() {
         noLayout ?
           <Header>
             <Routes>
+              
               <Route path="/" element={<Home />} />
               <Route path="/login-admin" element={<AdminLogin />} />
               <Route path="/login" element={<Login />} />

@@ -42,12 +42,12 @@ export default function AdminLogin() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100">
+        <div className="min-h-screen flex items-center justify-center bg-slate-900">
             <div className="bg-white rounded-2xl shadow-lg p-8 w-full max-w-sm sm:max-w-md">
                 {/* Logo */}
                 <div className="flex justify-center mb-6">
                     <img
-                        src="https://c0.klipartz.com/pngpicture/973/11/gratis-png-logo-phoenix-illustration-phoenix-logo-design-phoenix-illustration-thumbnail.png" // cambia esto por tu logotipo real
+                        src="https://e7.pngegg.com/pngimages/623/208/png-clipart-logo-graphic-design-interior-design-services-art-free-logo-design-template-web-design-free-logo-design-template.png" // cambia esto por tu logotipo real
                         alt="Logo empresa"
                         className="h-20 w-20 object-contain"
                     />
@@ -90,7 +90,7 @@ export default function AdminLogin() {
 
                     <button
                         type="submit"
-                        className="w-full bg-blue-600 text-white font-medium py-2 rounded-lg hover:bg-blue-700 transition-all duration-200"
+                        className="w-full bg-teal-600 text-white font-medium py-2 rounded-lg hover:bg-teal-700 transition-all duration-200"
                     >
                         Ingresar
                     </button>
@@ -98,7 +98,7 @@ export default function AdminLogin() {
 
                 {/* Pie (opcional) */}
                 <p className="text-center text-gray-500 text-sm mt-6">
-                    © {new Date().getFullYear()} ElectroSHOP. Todos los derechos reservados.
+                    © {new Date().getFullYear()} ElectroSTORE. Todos los derechos reservados.
                 </p>
             </div>
             <ToastContainer position="top-center" autoClose={3000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
