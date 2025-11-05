@@ -64,8 +64,8 @@ class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all().order_by('-created')
     serializer_class = ProductSerializer
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
-    search_fields = ['product_name', 'description', 'category__nombre']
-    ordering_fields = ['product_name','description', 'category__nombre']    
+    search_fields = ['product_name', 'description', 'category__name']
+    ordering_fields = ['product_name','description', 'category__name']    
 
 
 
