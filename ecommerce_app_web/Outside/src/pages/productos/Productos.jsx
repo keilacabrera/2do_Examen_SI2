@@ -188,14 +188,15 @@ export default function Productos() {
                       )}
                     </td>
                     <td className="p-3 text-gray-700 ">{prod.product_name}</td>
-                    <td className="p-3 text-gray-700 ">{prod.category}</td>
+                    <td className="p-3 text-gray-700 ">{prod.category_name}</td>
                     <td>Bs {prod.price}</td>
                     <td>{prod.stock}</td>
-                    {/* <td>{prod.is_available ? "✅" : "❌"}</td> */}
                     <td className="px-4 py-3">
-                      <span className={`px-3 py-1 text-xs rounded-full font-medium ${prod.is_available ? "bg-green-200 text-green-700" : "bg-red-100 text-red-700"}`}>
-                        {prod.is_available ? "Disponible" : "No Disponible"}
-                      </span>
+                      {prod.is_available ? (
+                        <span className="px-3 py-1 text-xs rounded-full bg-green-200 text-green-700 font-semibold">Disponible</span>
+                      ) : (
+                        <span className="px-3 py-1 text-xs rounded-full bg-red-100 text-red-700 font-semibold">No disponible</span>
+                      )}
                     </td>
                     <td className="p-3   text-center">
                       <div className="flex items-center justify-center gap-2">
