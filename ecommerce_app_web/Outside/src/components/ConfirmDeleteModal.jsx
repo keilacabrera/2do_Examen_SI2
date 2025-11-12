@@ -16,7 +16,7 @@ export default function ConfirmDeleteModal({ isOpen, onClose, onConfirm, categor
           <span className="font-medium text-gray-800">
             {categoria?.nombre}
           </span> */}
-          ¿Desea eliminar la categoria {categoria?.category_name}?
+          ¿Desea eliminar esta opción?
         </p>
         <div className="flex justify-end gap-3">
           <button

@@ -1,5 +1,6 @@
 import { LuShoppingCart, LuSearch, LuUser } from "react-icons/lu";
 import {Link} from 'react-router-dom'
+import Search from "../../components/Search";
 
 export default function HomeEcommerce() {
   const productos = [
@@ -27,7 +28,7 @@ export default function HomeEcommerce() {
     <div className="min-h-screen flex flex-col bg-gray-50">
       {/* HERO */}
       <header className="relative mt-8 bg-slate-900 text-white py-10">
-        <div className="ml-80 mx-80 mb-12 bg-white text-gray-600 rounded-lg">
+        {/* <div className="ml-80 mx-80 mb-12 bg-white text-gray-600 rounded-lg">
           <input
             type="text"
             // value={search}
@@ -35,7 +36,9 @@ export default function HomeEcommerce() {
             placeholder="Buscar ..."
             className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
           />
-        </div>
+          
+        </div> */}
+        <Search/>
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center">
 
           <div className="md:w-1/2 space-y-4">

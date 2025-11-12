@@ -17,6 +17,7 @@ import ClienteProfile from './pages/ecommerce/ClienteProfile';
 import AdminLogin from './pages/admin/AdminLogin';
 import Login from './pages/admin/Login';
 import AddProductos from './pages/productos/AddProductos';
+import SearchResults from './pages/productos/SearchResults';
 // import './App.css'
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
   const noLayout = location.pathname === "/" || location.pathname === "/detalle-producto" 
                   || location.pathname === "/carrito" || location.pathname === "/checkout"
                   || location.pathname === "/perfil" || location.pathname === "/login-admin"
-                  || location.pathname === "/login"
+                  || location.pathname === "/login" || location.pathname === "/buscar/:query"
 
   return (
     <>
@@ -38,6 +39,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/detalle-producto" element={<DetalleProducto />} />
               <Route path="/carrito" element={<Carrito />} />
+              <Route path="/buscar/:query" element={<SearchResults />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/perfil" element={<ClienteProfile />} />
             </Routes>
